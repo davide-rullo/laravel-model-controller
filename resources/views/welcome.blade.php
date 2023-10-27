@@ -18,7 +18,25 @@
 <body>
 
     <main class="bg-light">
-        <h1>Prova</h1>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+
+                @forelse ($movies as $movie)
+                <div class="col">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p>{{$movie->title}}</p>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col">
+                    <p>No movies found!</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
     </main>
 
 </body>
